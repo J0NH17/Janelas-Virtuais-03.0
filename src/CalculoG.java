@@ -21,54 +21,51 @@ public class CalculoG extends javax.swing.JFrame {
         initComponents();
     }
     
-    public void planeta(){
+    public double planeta(){
         
-        double gravit =0;
+        double gravitPlanet =0;
         
         switch (cbPlanetas.getSelectedItem().toString()) {
             case "Mercúrio":
-                gravit = 3.6;
+                gravitPlanet = 3.6;
                 
                 break;
             case "Vênus":
-                gravit = 8.7;
+                gravitPlanet = 8.7;
                 
                 break;
             case "Terra":
-                gravit = 9.8;
+                gravitPlanet = 9.8;
                 
                 break;
             case "Marte":
-                gravit = 3.7;
+                gravitPlanet = 3.7;
                 
                 break;
             case "Júpiter":
-                gravit = 24.79;
+                gravitPlanet = 24.79;
                 
                 break;
             case "Saturno":
-                gravit = 10.44;
+                gravitPlanet = 10.44;
                 
                 break;
             case "Urano":
-                gravit = 8.69;
+                gravitPlanet = 8.69;
                 
                 break;
             case "Netuno":
-                gravit = 11.15;
+                gravitPlanet = 11.15;
                 
                 break;
             case "Selena":
-                gravit = 1.6;
+                gravitPlanet = 1.6;
                 
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"Nada selecionado");
         }
-        
-    
-    
-    
+        return gravitPlanet;
     }
 
     /**
@@ -171,11 +168,12 @@ public class CalculoG extends javax.swing.JFrame {
     }//GEN-LAST:event_cbPlanetasActionPerformed
 
     private void jbCalculopesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalculopesoActionPerformed
-        // TODO add your handling code here:
+        double pesoTerra =Double.parseDouble(txfPeso1.getText());
+        double resultadoG = (pesoTerra/10) * planeta();
+        JOptionPane.showMessageDialog(null, "Seu peso em "+cbPlanetas.getSelectedItem().toString()+" é de :"+resultadoG+" kg");
     }//GEN-LAST:event_jbCalculopesoActionPerformed
 
     private void txfPeso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfPeso1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txfPeso1ActionPerformed
 
     /**

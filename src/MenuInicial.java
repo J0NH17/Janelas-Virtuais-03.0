@@ -132,7 +132,9 @@ public class MenuInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtCaixadeselecaoActionPerformed
 
     private void jbtBlackholeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtBlackholeActionPerformed
-        // TODO add your handling code here:
+        CalculoG cg =new CalculoG();
+        cg.setVisible(true);
+        
     }//GEN-LAST:event_jbtBlackholeActionPerformed
 
     /**
