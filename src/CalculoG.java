@@ -1,26 +1,73 @@
 
 import javax.swing.JOptionPane;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-/**
- *
- * @author 1091771
- */
 public class CalculoG extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CalculoG.class.getName());
 
-    /**
-     * Creates new form CalculoG
-     */
     public CalculoG() {
         initComponents();
+        planetaIMG();
     }
     
+    
+    
+ private void mostrarPlaneta(String caminhoImagem) {
+        // Cria ícone da imagem
+        ImageIcon icon = new ImageIcon(caminhoImagem);
+        // Redimensiona imagem para tamanho fixo
+        Image imagem = icon.getImage().getScaledInstance(
+                120, // largura
+                120, // altura
+                Image.SCALE_SMOOTH
+        );
+        // Coloca imagem redimensionada no JLabel
+        lblPlaneta.setIcon(new ImageIcon(imagem));
+    }
+    
+    public void planetaIMG(){
+        switch (cbPlanetas.getSelectedItem().toString()) {
+            case "Mercúrio":
+                mostrarPlaneta("src/img/mercurio_img.png");
+                break;
+            case "Vênus":
+                mostrarPlaneta("src/img/venus_img.png");
+                break;
+            case "Terra":
+                mostrarPlaneta("src/img/terra_img.png");
+                break;
+            case "Marte":
+                mostrarPlaneta("src/img/marte_img.png");
+
+                break;
+            case "Júpiter":
+                mostrarPlaneta("src/img/jupiter_img.png");
+                
+                break;
+            case "Saturno":
+                mostrarPlaneta("src/img/saturno_img.png");
+                
+                break;
+            case "Urano":
+                mostrarPlaneta("src/img/urano_img.png");
+                
+                break;
+            case "Netuno":
+                mostrarPlaneta("src/img/netuno_img.png");
+                
+                break;
+            case "Selena":
+                mostrarPlaneta("src/img/lua_img.png");
+                break;
+            default:
+                JOptionPane.showMessageDialog(null,"Nada selecionado");
+        }
+        
+    }
+   
+            
     public double planeta(){
         
         double gravitPlanet =0;
@@ -28,7 +75,7 @@ public class CalculoG extends javax.swing.JFrame {
         switch (cbPlanetas.getSelectedItem().toString()) {
             case "Mercúrio":
                 gravitPlanet = 3.6;
-                
+                                
                 break;
             case "Vênus":
                 gravitPlanet = 8.7;
@@ -36,10 +83,11 @@ public class CalculoG extends javax.swing.JFrame {
                 break;
             case "Terra":
                 gravitPlanet = 9.8;
-                
+               
                 break;
             case "Marte":
                 gravitPlanet = 3.7;
+                
                 
                 break;
             case "Júpiter":
@@ -82,7 +130,7 @@ public class CalculoG extends javax.swing.JFrame {
         txfPeso1 = new javax.swing.JTextField();
         cbPlanetas = new javax.swing.JComboBox<>();
         jbCalculopeso = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        lblPlaneta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CalculoGravidade");
@@ -95,51 +143,54 @@ public class CalculoG extends javax.swing.JFrame {
         txfPeso1.addActionListener(this::txfPeso1ActionPerformed);
 
         cbPlanetas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno", "Selena :)" }));
+        cbPlanetas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbPlanetasMouseClicked(evt);
+            }
+        });
         cbPlanetas.addActionListener(this::cbPlanetasActionPerformed);
 
         jbCalculopeso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbCalculopeso.setText("Calcular peso ");
         jbCalculopeso.addActionListener(this::jbCalculopesoActionPerformed);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setText("Icon");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel2))
+                        .addGap(51, 51, 51)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jbCalculopeso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                .addComponent(txfPeso1, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jbCalculopeso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                            .addComponent(txfPeso1, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
+                        .addGap(83, 83, 83)
                         .addComponent(cbPlanetas, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(lblPlaneta, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(43, 43, 43)
+                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel1))
+                        .addGap(10, 10, 10)
+                        .addComponent(lblPlaneta, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txfPeso1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbPlanetas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jbCalculopeso, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(txfPeso1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbCalculopeso, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cbPlanetas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -162,19 +213,25 @@ public class CalculoG extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+      
 
     private void cbPlanetasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPlanetasActionPerformed
-        // TODO add your handling code here:
+      planetaIMG();
     }//GEN-LAST:event_cbPlanetasActionPerformed
 
     private void jbCalculopesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalculopesoActionPerformed
         double pesoTerra =Double.parseDouble(txfPeso1.getText());
         double resultadoG = (pesoTerra/10) * planeta();
+        planetaIMG();
         JOptionPane.showMessageDialog(null, "Seu peso em "+cbPlanetas.getSelectedItem().toString()+" é de :"+resultadoG+" kg");
     }//GEN-LAST:event_jbCalculopesoActionPerformed
 
     private void txfPeso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfPeso1ActionPerformed
     }//GEN-LAST:event_txfPeso1ActionPerformed
+
+    private void cbPlanetasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbPlanetasMouseClicked
+        planetaIMG();
+    }//GEN-LAST:event_cbPlanetasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -205,9 +262,9 @@ public class CalculoG extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cbPlanetas;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbCalculopeso;
+    private javax.swing.JLabel lblPlaneta;
     private javax.swing.JTextField txfPeso1;
     // End of variables declaration//GEN-END:variables
 }
