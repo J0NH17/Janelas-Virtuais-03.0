@@ -31,10 +31,14 @@ public class MenuInicial extends javax.swing.JFrame {
         jbTriangulo = new javax.swing.JButton();
         jbtCaixadeselecao = new javax.swing.JButton();
         jbtBlackhole = new javax.swing.JButton();
+        jbtConfig = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jbMenuItem3 = new javax.swing.JCheckBoxMenuItem();
+        jbMenuItem4 = new javax.swing.JCheckBoxMenuItem();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
 
@@ -44,6 +48,7 @@ public class MenuInicial extends javax.swing.JFrame {
         jbCalculadora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/calculadoraimg.png"))); // NOI18N
         jbCalculadora.addActionListener(this::jbCalculadoraActionPerformed);
 
+        jbTriangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/trianguloimg.png"))); // NOI18N
         jbTriangulo.addActionListener(this::jbTrianguloActionPerformed);
 
         jbtCaixadeselecao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-box.gif"))); // NOI18N
@@ -51,6 +56,9 @@ public class MenuInicial extends javax.swing.JFrame {
 
         jbtBlackhole.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-black-hole-100.png"))); // NOI18N
         jbtBlackhole.addActionListener(this::jbtBlackholeActionPerformed);
+
+        jbtConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/engrenagem_gif.gif"))); // NOI18N
+        jbtConfig.addActionListener(this::jbtConfigActionPerformed);
 
         jMenu1.setText("Formularios");
 
@@ -61,6 +69,21 @@ public class MenuInicial extends javax.swing.JFrame {
         jMenuItem2.setText("Triângulos");
         jMenuItem2.addActionListener(this::jMenuItem2ActionPerformed);
         jMenu1.add(jMenuItem2);
+
+        jbMenuItem3.setSelected(true);
+        jbMenuItem3.setText("Box");
+        jbMenuItem3.addActionListener(this::jbMenuItem3ActionPerformed);
+        jMenu1.add(jbMenuItem3);
+
+        jbMenuItem4.setSelected(true);
+        jbMenuItem4.setText("Calculo Gravidade");
+        jbMenuItem4.addActionListener(this::jbMenuItem4ActionPerformed);
+        jMenu1.add(jbMenuItem4);
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("Configurações de jogo");
+        jCheckBoxMenuItem1.addActionListener(this::jCheckBoxMenuItem1ActionPerformed);
+        jMenu1.add(jCheckBoxMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
@@ -77,27 +100,28 @@ public class MenuInicial extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jbCalculadora)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbtCaixadeselecao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbtCaixadeselecao)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbtBlackhole, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbtConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbtCaixadeselecao)
+                    .addComponent(jbtConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtBlackhole, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jbCalculadora, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbtCaixadeselecao)))
-                .addContainerGap(202, Short.MAX_VALUE))
+                    .addComponent(jbCalculadora))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         pack();
@@ -137,6 +161,26 @@ public class MenuInicial extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jbtBlackholeActionPerformed
 
+    private void jbtConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtConfigActionPerformed
+        ConfiguracoesJogo config = new ConfiguracoesJogo();
+        config.setVisible(true);
+    }//GEN-LAST:event_jbtConfigActionPerformed
+
+    private void jbMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMenuItem3ActionPerformed
+        ExComboBox combox = new ExComboBox();
+        combox.setVisible(true);
+    }//GEN-LAST:event_jbMenuItem3ActionPerformed
+
+    private void jbMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMenuItem4ActionPerformed
+        CalculoG cg =new CalculoG();
+        cg.setVisible(true);
+    }//GEN-LAST:event_jbMenuItem4ActionPerformed
+
+    private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
+        ConfiguracoesJogo config = new ConfiguracoesJogo();
+        config.setVisible(true);
+    }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -163,6 +207,7 @@ public class MenuInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -170,8 +215,11 @@ public class MenuInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JButton jbCalculadora;
+    private javax.swing.JCheckBoxMenuItem jbMenuItem3;
+    private javax.swing.JCheckBoxMenuItem jbMenuItem4;
     private javax.swing.JButton jbTriangulo;
     private javax.swing.JButton jbtBlackhole;
     private javax.swing.JButton jbtCaixadeselecao;
+    private javax.swing.JButton jbtConfig;
     // End of variables declaration//GEN-END:variables
 }

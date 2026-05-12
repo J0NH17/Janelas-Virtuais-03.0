@@ -58,7 +58,7 @@ public class CalculoG extends javax.swing.JFrame {
                 mostrarPlaneta("src/img/netuno_img.png");
                 
                 break;
-            case "Selena":
+            case "Selena :)":
                 mostrarPlaneta("src/img/lua_img.png");
                 break;
             default:
@@ -82,12 +82,11 @@ public class CalculoG extends javax.swing.JFrame {
                 
                 break;
             case "Terra":
-                gravitPlanet = 9.8;
+                gravitPlanet = 9.81;
                
                 break;
             case "Marte":
                 gravitPlanet = 3.7;
-                
                 
                 break;
             case "Júpiter":
@@ -106,7 +105,7 @@ public class CalculoG extends javax.swing.JFrame {
                 gravitPlanet = 11.15;
                 
                 break;
-            case "Selena":
+            case "Selena :)":
                 gravitPlanet = 1.6;
                 
                 break;
@@ -172,7 +171,7 @@ public class CalculoG extends javax.swing.JFrame {
                         .addComponent(cbPlanetas, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(32, 32, 32)
                 .addComponent(lblPlaneta, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,7 +189,7 @@ public class CalculoG extends javax.swing.JFrame {
                         .addComponent(jbCalculopeso, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cbPlanetas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
