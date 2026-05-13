@@ -166,33 +166,33 @@ public class ConfiguracoesJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_ckbLegendaActionPerformed
 
     private void btSalvarConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarConfigActionPerformed
-       
+
         String dificuldade = "";
-        
-        if(rbFacil.isSelected()){
-           dificuldade = "Facil";
-       
-       }
-        if(rbMedio.isSelected()){
-           dificuldade = "Medio";
-       
-       }
-        if(rbDificil.isSelected()){
-           dificuldade = "Difícil";
-       
-       }
+
+        if (rbFacil.isSelected()) {
+            dificuldade = "Facil";
+
+        }
+        if (rbMedio.isSelected()) {
+            dificuldade = "Medio";
+
+        }
+        if (rbDificil.isSelected()) {
+            dificuldade = "Difícil";
+
+        }
         //infomação messagem
-        String mensagem ="";
-        mensagem += "Musica: "+ ckbMusica.isSelected()+"\n";
-        mensagem += "Legenda: "+ ckbLegenda.isSelected()+"\n";
-        mensagem += "Tela cheia: "+ ckbTelaCheia.isSelected()+"\n";
-        
-        mensagem += "dificuldade: "+ dificuldade+"\n";
-        mensagem += "Volume "+ jslideVolume.getValue()+"\n";
-        
+        String mensagem = "";
+        mensagem += "Musica: " + ckbMusica.isSelected() + "\n";
+        mensagem += "Legenda: " + ckbLegenda.isSelected() + "\n";
+        mensagem += "Tela cheia: " + ckbTelaCheia.isSelected() + "\n";
+
+        mensagem += "dificuldade: " + dificuldade + "\n";
+        mensagem += "Volume " + jslideVolume.getValue() + "\n";
+
         JOptionPane.showMessageDialog(null, mensagem);
-        
-        
+
+
     }//GEN-LAST:event_btSalvarConfigActionPerformed
 
     public static void main(String args[]) {

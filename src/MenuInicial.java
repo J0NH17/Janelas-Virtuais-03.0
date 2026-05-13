@@ -32,6 +32,7 @@ public class MenuInicial extends javax.swing.JFrame {
         jbtCaixadeselecao = new javax.swing.JButton();
         jbtBlackhole = new javax.swing.JButton();
         jbtConfig = new javax.swing.JButton();
+        jbCadastrar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -39,6 +40,7 @@ public class MenuInicial extends javax.swing.JFrame {
         jbMenuItem3 = new javax.swing.JCheckBoxMenuItem();
         jbMenuItem4 = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        miCadastrar = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
 
@@ -59,6 +61,9 @@ public class MenuInicial extends javax.swing.JFrame {
 
         jbtConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/engrenagem_gif.gif"))); // NOI18N
         jbtConfig.addActionListener(this::jbtConfigActionPerformed);
+
+        jbCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user_img.png"))); // NOI18N
+        jbCadastrar.addActionListener(this::jbCadastrarActionPerformed);
 
         jMenu1.setText("Formularios");
 
@@ -85,6 +90,10 @@ public class MenuInicial extends javax.swing.JFrame {
         jCheckBoxMenuItem1.addActionListener(this::jCheckBoxMenuItem1ActionPerformed);
         jMenu1.add(jCheckBoxMenuItem1);
 
+        miCadastrar.setText("Cadastrar");
+        miCadastrar.addActionListener(this::miCadastrarActionPerformed);
+        jMenu1.add(miCadastrar);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Ajuda");
@@ -100,7 +109,7 @@ public class MenuInicial extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jbCalculadora)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -109,19 +118,23 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbtBlackhole, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbtConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jbtConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbtCaixadeselecao)
-                    .addComponent(jbtConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtBlackhole, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbTriangulo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbCalculadora))
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jbtCaixadeselecao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbtConfig, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbtBlackhole, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbTriangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbCalculadora, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
@@ -181,6 +194,16 @@ public class MenuInicial extends javax.swing.JFrame {
         config.setVisible(true);
     }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
 
+    private void jbCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCadastrarActionPerformed
+       Cadastro c = new Cadastro();
+       c.setVisible(true);
+    }//GEN-LAST:event_jbCadastrarActionPerformed
+
+    private void miCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCadastrarActionPerformed
+        Cadastro c = new Cadastro();
+        c.setVisible(true);
+    }//GEN-LAST:event_miCadastrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -214,6 +237,7 @@ public class MenuInicial extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JButton jbCadastrar;
     private javax.swing.JButton jbCalculadora;
     private javax.swing.JCheckBoxMenuItem jbMenuItem3;
     private javax.swing.JCheckBoxMenuItem jbMenuItem4;
@@ -221,5 +245,6 @@ public class MenuInicial extends javax.swing.JFrame {
     private javax.swing.JButton jbtBlackhole;
     private javax.swing.JButton jbtCaixadeselecao;
     private javax.swing.JButton jbtConfig;
+    private javax.swing.JMenuItem miCadastrar;
     // End of variables declaration//GEN-END:variables
 }
