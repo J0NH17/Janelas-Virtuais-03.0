@@ -125,7 +125,7 @@ public class Buscando extends javax.swing.JFrame {
              );
             lbMostrar.setIcon(new ImageIcon(imagem));
         }else{
-            JOptionPane.showMessageDialog(null,"Arquivo inválido  :( ");
+            JOptionPane.showMessageDialog(null,"Arquivo não encontrado  :( ");
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
